@@ -9,6 +9,8 @@ const navigate = useNavigate();
     <div>
       <button onClick={()=>navigate("/additem")}>Add Item</button>
       <button onClick={()=>navigate("/allItems")}>Display Items</button>
+      <button onClick={()=>navigate("/register")}>Register</button>
+      <button onClick={()=>navigate("/login")}>Log in</button>
     </div>
   )
 }
