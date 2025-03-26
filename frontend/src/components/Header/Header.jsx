@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import UserImage from '../../assets/usernew.png';
 
 const Header = ({ userEmail, setUserEmail }) => {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const Header = ({ userEmail, setUserEmail }) => {
           <>
             <Link to="/profile" className="flex items-center gap-2">
               <img
-                src="https://via.placeholder.com/40"
+                src={UserImage}
                 alt="Profile"
                 className="w-8 h-8 rounded-full border-2 border-white"
               />

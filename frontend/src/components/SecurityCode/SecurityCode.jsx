@@ -37,9 +37,9 @@ function SecurityCode() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 rounded-lg">
       <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-bold text-center mb-4">Enter Security Code</h2>
+        <h2 className="text-2xl font-bold text-center mb-4">Enter Security Code for Registration</h2>
         {error && <p className="text-red-500 text-center">{error}</p>}
         <form onSubmit={handleSubmit} className="flex flex-col items-center">
           <input

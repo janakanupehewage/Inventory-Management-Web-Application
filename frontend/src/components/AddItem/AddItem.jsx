@@ -78,7 +78,7 @@ export default function InventoryForm() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-400 to-purple-500 p-6">
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 rounded-lg p-6">
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-lg"

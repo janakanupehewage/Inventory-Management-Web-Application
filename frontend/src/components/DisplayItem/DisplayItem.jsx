@@ -86,7 +86,7 @@ export default function DisplayItem() {
 
 
   return (
-    <div className="p-6 min-h-screen bg-gradient-to-r from-blue-100 to-gray-200 flex justify-center">
+    <div className="p-6 min-h-screen bg-gradient-to-r from-blue-100 to-gray-200 rounded-lg flex justify-center">
       <div className="w-full max-w-6xl bg-white p-6 shadow-xl rounded-lg">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">Inventory Items</h2>
 

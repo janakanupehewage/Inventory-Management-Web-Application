@@ -19,7 +19,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // New way to disable CSRF
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/user", "/login","/generate-security-code", "/verify-security-code").permitAll() // Allow unauthenticated access to the /user endpoint
+                        .requestMatchers("/user", "/login","/generate-security-code", "/verify-security-code","/api/admin/dashboard/stats","/inventory/itemImg","/inventory","/uploads/{filename}","/inventory/{modelNo}").permitAll() // Allow unauthenticated access to the /user endpoint
                         .anyRequest().authenticated() // Require authentication for all other requests
                 );
         return http.build();
