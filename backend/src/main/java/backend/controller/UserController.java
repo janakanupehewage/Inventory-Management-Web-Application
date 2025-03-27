@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
 
-//@CrossOrigin("http://localhost:5173")
+@CrossOrigin("https://inventory-management-we-git-62d7b6-madhushans-projects-a8699fbf.vercel.app")
 @RestController
 public class UserController {
 
