@@ -57,7 +57,7 @@ export default function InventoryForm() {
     let imageName = '';
 
     try{
-        const response = await axios.post('http://localhost:8080/inventory/itemImg', formData, {
+        const response = await axios.post('https://inventory-management-web-applica-production.up.railway.app/inventory/itemImg', formData, {
             headers:{
                 'Content-Type': 'multipart/form-data'
             },
@@ -70,7 +70,7 @@ export default function InventoryForm() {
 
     const updateInventory = {...inventory, itemImage:imageName};
 
-    await axios.post('http://localhost:8080/inventory', updateInventory);
+    await axios.post('https://inventory-management-web-applica-production.up.railway.app/inventory', updateInventory);
     alert("Item added successfully");
     window.location.reload();
 

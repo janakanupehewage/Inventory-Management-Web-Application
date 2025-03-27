@@ -27,7 +27,7 @@ const Register = () => {
     setError("");  // Clear any previous error
 
     try {
-      const response = await axios.post('http://localhost:8080/user', formData);
+      const response = await axios.post('https://inventory-management-web-applica-production.up.railway.app/user', formData);
       console.log(response.data);
       
       setIsLoading(false); // Stop loading after API response

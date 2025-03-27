@@ -40,7 +40,7 @@ const UpdateItem = () => {
     
       const fetchItemData = async () => {
         try {
-          const response = await axios.get(`http://localhost:8080/inventory/${modelNo.toString()}`);
+          const response = await axios.get(`https://inventory-management-web-applica-production.up.railway.app/inventory/${modelNo.toString()}`);
           const itemData = response.data;
           setformData({
             //itemId: itemData.itemId || "",

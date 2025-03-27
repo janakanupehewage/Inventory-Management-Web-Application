@@ -17,7 +17,7 @@ export default function DisplayItem() {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/inventory");
+      const response = await axios.get("https://inventory-management-web-applica-production.up.railway.app/inventory");
       setItems(response.data);
       setFilteredItems(response.data);
     } catch (error) {
@@ -32,7 +32,7 @@ export default function DisplayItem() {
   const handleDelete = async (model_No) => {
     if (window.confirm("Are you sure you want to delete this item?")) {
       try {
-        await axios.delete(`http://localhost:8080/inventory/${model_No.toString()}`);
+        await axios.delete(`https://inventory-management-web-applica-production.up.railway.app/inventory/${model_No.toString()}`);
         setItems(items.filter((item) => item.modelNo !== model_No));
         setFilteredItems(filteredItems.filter((item) => item.modelNo !== model_No));
       } catch (error) {
