@@ -1,7 +1,7 @@
 package backend.controller;
 
 import backend.model.InventoryModel;
-import backend.model.UserModel;
+//import backend.model.UserModel;
 import backend.repository.InventoryRepository;
 import backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

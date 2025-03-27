@@ -1,6 +1,6 @@
 package backend.controller;
 
-import backend.exception.InvalidCodeException;
+//import backend.exception.InvalidCodeException;
 import backend.exception.UserNotFoundException;
 import backend.model.UserModel;
 import backend.repository.UserRepository;
