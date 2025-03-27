@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import UserImage from '../../assets/usernew.png';
 import logoImage from '../../assets/Inventory_Management.png';
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -15,14 +15,14 @@ export default function InventoryForm() {
     itemDetails: "",
   });
 
-  const {itemId,
-    itemName,
-    itemCategory,
-    brand,
-    modelNo,
-    itemQty,
-    itemPrice,
-    itemDetails,} = inventory
+  // const {itemId,
+  //   itemName,
+  //   itemCategory,
+  //   brand,
+  //   modelNo,
+  //   itemQty,
+  //   itemPrice,
+  //   itemDetails,} = inventory
   const [imagePreview, setImagePreview] = useState(null);
 
   const categories = [
