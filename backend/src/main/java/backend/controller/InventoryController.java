@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.List;
 
-@CrossOrigin("http://localhost:5173")
+//@CrossOrigin("http://localhost:5173")
 @RestController
 public class InventoryController {
     @Autowired

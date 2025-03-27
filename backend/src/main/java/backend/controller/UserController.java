@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
 
-@CrossOrigin("http://localhost:5173")
+//@CrossOrigin("http://localhost:5173")
 @RestController
 public class UserController {
 
