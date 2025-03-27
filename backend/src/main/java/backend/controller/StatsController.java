@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@CrossOrigin("https://inventory-management-we-git-62d7b6-madhushans-projects-a8699fbf.vercel.app")
+//@CrossOrigin("https://inventory-management-we-git-62d7b6-madhushans-projects-a8699fbf.vercel.app")
 @RestController
 @RequestMapping("/api/admin/dashboard")
 public class StatsController {
