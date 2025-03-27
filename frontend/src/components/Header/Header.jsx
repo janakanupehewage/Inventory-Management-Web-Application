@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import UserImage from '../../assets/usernew.png';
+import logoImage from '../../assets/Inventory_Management.png';
 
 const Header = ({ userEmail, setUserEmail }) => {
   const navigate = useNavigate();
@@ -22,7 +23,15 @@ const Header = ({ userEmail, setUserEmail }) => {
 
   return (
     <header className="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md">
-      <h1 className="text-xl font-bold">Inventory Management System</h1>
+      <h1 className="text-xl font-bold flex items-center">
+        {/* Image on the left */}
+        <img
+          src={logoImage} // Replace with the correct image path
+          alt="Logo"
+          className="w-8 h-8 mr-2" // Adjust the size of the logo as needed
+        />
+        Inventory Management System
+      </h1>
 
       <div className="flex items-center gap-4">
         {userEmail ? (
@@ -37,7 +46,7 @@ const Header = ({ userEmail, setUserEmail }) => {
             </Link>
             <button
               onClick={handleLogout}
-              className="bg-red-500 px-4 py-2 rounded-md hover:bg-red-700 transition"
+              className="bg-red-500 px-4 py-2 rounded-md hover:bg-red-700 transition cursor-pointer"
             >
               Logout
             </button>

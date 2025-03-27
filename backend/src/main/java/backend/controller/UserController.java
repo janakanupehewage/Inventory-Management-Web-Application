@@ -7,6 +7,7 @@ import backend.repository.UserRepository;
 import backend.exception.UserAlreadyExistsException;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,18 +41,28 @@ public class UserController {
 
     // Login User & Store ID in Session
     @PostMapping("/login")
-    public String loginUser(@RequestBody UserModel loginRequest, HttpSession session) {
+    public ResponseEntity<Map<String, Object>> loginUser(@RequestBody UserModel loginRequest, HttpSession session) {
         Optional<UserModel> user = userRepository.findByEmail(loginRequest.getEmail());
 
         if (user.isEmpty() || !passwordEncoder.matches(loginRequest.getPassword(), user.get().getPassword())) {
             throw new UserNotFoundException("Invalid email or password");
         }
 
-        // Store user ID in session
+        // Store user data in session
         session.setAttribute("userId", user.get().getId());
+        session.setAttribute("fullName", user.get().getFullName());
+        session.setAttribute("phoneNo", user.get().getPhoneNo());
 
-        return "Login successful!";
+        // Prepare the response map
+        Map<String, Object> response = new HashMap<>();
+        response.put("userId", user.get().getId());
+        response.put("fullName", user.get().getFullName());
+        response.put("phoneNo", user.get().getPhoneNo());
+
+        // Return a ResponseEntity with the response data
+        return ResponseEntity.ok(response);  // Returns status 200 with the data
     }
+
 
     // Logout User
     @PostMapping("/logout")

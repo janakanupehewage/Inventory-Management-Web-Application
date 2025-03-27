@@ -96,7 +96,13 @@ const UpdateItem = () => {
       };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 rounded-lg p-6">
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 rounded-lg p-6 relative">
+      <button
+        onClick={() => navigate("/allitems")}
+        className="cursor-pointer absolute top-4 left-4 flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md shadow-md transition duration-200"
+      >
+        ◀ Back
+      </button>
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-lg"
@@ -217,7 +223,7 @@ const UpdateItem = () => {
           )}
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 rounded-lg text-lg font-semibold hover:opacity-90 transition"
+            className="cursor-pointer w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 rounded-lg text-lg font-semibold hover:opacity-90 transition"
           >
             Submit
           </button>

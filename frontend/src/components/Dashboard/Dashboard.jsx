@@ -39,10 +39,10 @@ function Dashboard() {
     <div className="p-6 space-y-6">
       {/* Buttons in Top Right Corner */}
       <div className="flex justify-end gap-4">
-        <button onClick={() => navigate("/additem")} className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">
+        <button onClick={() => navigate("/additem")} className="bg-blue-600 cursor-pointer text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">
           Add Item
         </button>
-        <button onClick={() => navigate("/allItems")} className="bg-green-600 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700">
+        <button onClick={() => navigate("/allItems")} className="bg-green-600 cursor-pointer text-white px-6 py-3 rounded-lg shadow hover:bg-green-700">
           Display Items
         </button>
       </div>

@@ -87,7 +87,13 @@ export default function DisplayItem() {
 
   return (
     <div className="p-6 min-h-screen bg-gradient-to-r from-blue-100 to-gray-200 rounded-lg flex justify-center">
-      <div className="w-full max-w-6xl bg-white p-6 shadow-xl rounded-lg">
+      <div className="w-full max-w-6xl bg-white p-6 shadow-xl rounded-lg relative">
+      <button
+        onClick={() => navigate("/")}
+        className="cursor-pointer absolute top-4 left-4 flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md shadow-md transition duration-200"
+      >
+        ◀ Back
+      </button>
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">Inventory Items</h2>
 
         {/* Filters */}
@@ -95,7 +101,7 @@ export default function DisplayItem() {
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-4 py-2 border rounded-lg bg-white shadow-sm"
+            className="px-4 py-2 border rounded-lg bg-white shadow-sm cursor-pointer"
           >
             <option value="">All Categories</option>
             {uniqueCategories.map((category) => (
@@ -106,7 +112,7 @@ export default function DisplayItem() {
           <select
             value={selectedBrand}
             onChange={(e) => setSelectedBrand(e.target.value)}
-            className="px-4 py-2 border rounded-lg bg-white shadow-sm"
+            className="px-4 py-2 border rounded-lg bg-white shadow-sm cursor-pointer"
           >
             <option value="">All Brands</option>
             {uniqueBrands.map((brand) => (
@@ -114,8 +120,8 @@ export default function DisplayItem() {
             ))}
           </select>
 
-          <button onClick={handleFilter} className="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition">Apply Filters</button>
-          <button onClick={() => { setSelectedCategory(""); setSelectedBrand(""); setFilteredItems(items); }} className="bg-gray-600 text-white px-5 py-2 rounded-lg shadow hover:bg-gray-700 transition">Reset</button>
+          <button onClick={handleFilter} className="bg-blue-600 cursor-pointer text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition">Apply Filters</button>
+          <button onClick={() => { setSelectedCategory(""); setSelectedBrand(""); setFilteredItems(items); }} className="bg-gray-600 cursor-pointer text-white px-5 py-2 rounded-lg shadow hover:bg-gray-700 transition">Reset</button>
         </div>
         <div className="flex justify-between items-center mb-4 gap-4">
             {/* Search Bar */}
@@ -146,7 +152,7 @@ export default function DisplayItem() {
             {/* Print Button */}
             <button
               onClick={generatePdf}
-              className="bg-green-600 text-white px-5 py-2 rounded-lg shadow hover:bg-green-700 transition"
+              className="bg-green-600 cursor-pointer text-white px-5 py-2 rounded-lg shadow hover:bg-green-700 transition"
             >
               Print PDF
             </button>
@@ -184,8 +190,8 @@ export default function DisplayItem() {
                     <td className="px-4 py-3">{item.itemPrice}</td>
                     <td className="px-4 py-3">{item.itemQty * item.itemPrice}</td>
                     <td className="px-4 py-3 flex justify-center gap-2">
-                      <button onClick={() => updateNavigate(item.modelNo)} className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600">Edit</button>
-                      <button onClick={() => handleDelete(item.modelNo)} className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Delete</button>
+                      <button onClick={() => updateNavigate(item.modelNo)} className="bg-green-500 cursor-pointer text-white px-3 py-1 rounded hover:bg-green-600">Edit</button>
+                      <button onClick={() => handleDelete(item.modelNo)} className="bg-red-500 cursor-pointer text-white px-3 py-1 rounded hover:bg-red-600">Delete</button>
                     </td>
                   </tr>
                 ))

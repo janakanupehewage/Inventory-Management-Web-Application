@@ -45,7 +45,14 @@ const Register = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 rounded-lg">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 rounded-lg relative">
+      
+      <button
+        onClick={() => navigate("/login")}
+        className="cursor-pointer absolute top-4 left-4 flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md shadow-md transition duration-200"
+      >
+        ◀ Back
+      </button>
       <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Create an Account
@@ -122,7 +129,7 @@ const Register = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white p-3 rounded-lg shadow-md hover:bg-blue-700 transition flex items-center justify-center"
+            className="cursor-pointer w-full bg-blue-600 text-white p-3 rounded-lg shadow-md hover:bg-blue-700 transition flex items-center justify-center"
             disabled={isLoading} // Disable button when loading
           >
             {isLoading ? (

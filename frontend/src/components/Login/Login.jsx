@@ -35,8 +35,12 @@ const Login = ({ setUser }) => {
         throw new Error(await response.text());
       }
 
+      const data = await response.json();
+
       // Store user ID in session storage
       sessionStorage.setItem("userId", formData.email);
+      sessionStorage.setItem("fullName", data.fullName);  // Save full name
+      sessionStorage.setItem("phoneNo", data.phoneNo);
 
       // Update the user state in App
       setUser(formData.email);
@@ -93,7 +97,7 @@ const Login = ({ setUser }) => {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white p-3 rounded-lg shadow-md hover:bg-blue-700 transition flex items-center justify-center"
+            className="cursor-pointer w-full bg-blue-600 text-white p-3 rounded-lg shadow-md hover:bg-blue-700 transition flex items-center justify-center"
             disabled={isLoading}  // Disable button while loading
           >
             {isLoading ? (
