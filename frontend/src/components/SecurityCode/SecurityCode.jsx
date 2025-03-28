@@ -20,7 +20,7 @@ function SecurityCode() {
     setError(""); // Clear previous error message
 
     try {
-      const response = await axios.post("https://inventory-management-web-applica-production.up.railway.app/verify-security-code", {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/verify-security-code`, {
         securityCode: securityCode,
       });
 
