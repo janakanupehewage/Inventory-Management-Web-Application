@@ -106,7 +106,7 @@ public class InventoryController {
 
                 try {
                     file.transferTo(Paths.get(folder + itemImage));
-                    existingInventory.setItemImage(itemImage);  // Save new image name
+                    existingInventory.setItemImage(itemImage);  // Save new image to folder with name
                 } catch (IOException e) {
                     throw new RuntimeException("Error Saving Uploaded File", e);
                 }
