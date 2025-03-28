@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.List;
 
-//@CrossOrigin("https://inventory-management-we-git-62d7b6-madhushans-projects-a8699fbf.vercel.app")
+@CrossOrigin("http://localhost:5173")
 @RestController
 public class InventoryController {
     @Autowired
@@ -106,6 +106,7 @@ public class InventoryController {
 
                 try {
                     file.transferTo(Paths.get(folder + itemImage));
+                    existingInventory.setItemImage(itemImage);  // Save new image name
                 } catch (IOException e) {
                     throw new RuntimeException("Error Saving Uploaded File", e);
                 }

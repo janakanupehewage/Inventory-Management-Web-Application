@@ -22,7 +22,7 @@ const Login = ({ setUser }) => {
     setIsLoading(true); // Set loading to true when login is being processed
 
     try {
-      const response = await fetch("https://inventory-management-web-applica-production.up.railway.app/login", {
+      const response = await fetch("http://localhost:8080/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

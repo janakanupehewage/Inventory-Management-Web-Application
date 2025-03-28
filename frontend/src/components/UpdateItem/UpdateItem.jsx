@@ -11,7 +11,7 @@ const UpdateItem = () => {
     const navigate = useNavigate();
     const [formData, setformData] = useState({
         //itemId: "",
-        itemImage: null,
+        itemImage: "",
         itemName: "",
         itemCategory: "",
         brand: "",
@@ -40,11 +40,11 @@ const UpdateItem = () => {
     
       const fetchItemData = async () => {
         try {
-          const response = await axios.get(`https://inventory-management-web-applica-production.up.railway.app/inventory/${modelNo.toString()}`);
+          const response = await axios.get(`http://localhost:8080/inventory/${modelNo.toString()}`);
           const itemData = response.data;
           setformData({
             //itemId: itemData.itemId || "",
-            itemImage: null,
+            itemImage: itemData.itemImage || "",
             itemName: itemData.itemName || "",
             itemCategory: itemData.itemCategory || "",
             brand: itemData.brand || "",
@@ -55,6 +55,18 @@ const UpdateItem = () => {
           });
         } catch (error) {
           console.error("Error fetching item details: ", error);
+        }
+      };
+
+      const handleImageChange = (e) => {
+        if(e.target.name === 'itemImage'){
+            //setInventory({...inventory, itemImage: e.target.files[0]});
+            const file = e.target.files[0];
+        setformData({ ...formData, itemImage: file });
+        setImagePreview(URL.createObjectURL(file)); // Preview the selected image
+        }
+        else{
+          setformData({...formData, [e.target.name]: e.target.value});
         }
       };
 
@@ -211,15 +223,23 @@ const UpdateItem = () => {
             name="itemImage"
             type="file"
             accept="image/*"
-            onChange={handleInputChange}
+            onChange={handleImageChange}
             className="w-full p-3 border border-gray-300 rounded-lg"
           />
-          {imagePreview && (
+          {imagePreview ? (
             <img
               src={imagePreview}
-              alt="Preview"
+              alt={formData.itemName}
               className="w-full h-40 object-cover rounded-lg mt-3 shadow-md"
             />
+          ) : (
+            formData.itemImage && (
+              <img
+                src={`http://localhost:8080/uploads/${formData.itemImage}`}
+                alt={formData.itemName}
+                className="w-full h-40 object-cover rounded-lg mt-3 shadow-md"
+              />
+            )
           )}
           <button
             type="submit"

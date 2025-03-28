@@ -26,7 +26,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://inventory-management-web-applica-production.up.railway.app/api/admin/dashboard/stats");
+        const response = await axios.get("http://localhost:8080/api/admin/dashboard/stats");
         setStats(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
