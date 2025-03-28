@@ -17,7 +17,6 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .cors(cors -> cors.disable())
                 .csrf(csrf -> csrf.disable()) // New way to disable CSRF
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers("/user", "/login","/generate-security-code", "/verify-security-code","/api/admin/dashboard/stats","/inventory/itemImg","/inventory","/uploads/{filename}","/inventory/{modelNo}").permitAll() // Allow unauthenticated access to the /user endpoint
