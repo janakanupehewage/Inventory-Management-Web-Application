@@ -9,7 +9,7 @@ const Header = ({ userEmail, setUserEmail }) => {
   useEffect(() => {
     const handleStorageChange = () => {
       setUserEmail(sessionStorage.getItem("userId"));
-      //set email
+      //set email to database
     };
 
     window.addEventListener("storage", handleStorageChange);
