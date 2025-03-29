@@ -9,6 +9,7 @@ const Header = ({ userEmail, setUserEmail }) => {
   useEffect(() => {
     const handleStorageChange = () => {
       setUserEmail(sessionStorage.getItem("userId"));
+      //set email
     };
 
     window.addEventListener("storage", handleStorageChange);
