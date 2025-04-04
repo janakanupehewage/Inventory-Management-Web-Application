@@ -6,7 +6,7 @@ This is an Inventory Management Web Application built with **React/Vite** for th
 ## Features
 - **View Inventory Items**: Display all items in the inventory.
 - **Filter Items**: Filter inventory by category and brand.
-- **Edit Item**: Update details of inventory item.
+- **Edit Item**: Update details of inventory items.
 - **Delete Item**: Remove items from the inventory.
 - **Search**: Search inventory items by name, category, or brand.
 - **PDF Report**: Generate a PDF report for the inventory.
